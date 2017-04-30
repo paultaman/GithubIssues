@@ -5,7 +5,7 @@ angular
         var vm = this;
         vm.issues = [];
         
-        GithubIssuesService.getIssuesGoingBack(7)
+        GithubIssuesService.getIssuesGoingBackByDays(7)
             .then(function(response) {
                 vm.issues = response;
             }, function(error) {

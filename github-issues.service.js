@@ -2,7 +2,7 @@ angular
     .module('GithubIssuesApp')
     .service('GithubIssuesService', function($q, $http) {
 
-        this.getIssuesGoingBack = function (days) {
+        this.getIssuesGoingBackByDays = function (days) {
             return $q(function(resolve, reject) {
                 var date = new Date();
                 date.setDate(date.getDate() - days);
