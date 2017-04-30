@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="github-issues.js"></script>
+        <script src="github-issues.controller.js"></script>
+        <script src="github-issues.service.js"></script>
+    </head>
+    <body>
+        <div ng-app="GithubIssuesApp">
+            <div ng-controller="GithubIssuesController as vm" class="container">
+                <h1>Angular Issues</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Body</th>
+                            <th>User Login</th>
+                            <th>Assignee Login</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="issue in vm.issues">
+                        <!--<tr ng-repeat="issue in vm.issues track by issue.id">-->
+                            <td>{{issue.title}}</td>
+                            <td>{{issue.body}}</td>
+                            <td>{{issue.user.login}}</td>
+                            <td>{{issue.assignee.login}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
